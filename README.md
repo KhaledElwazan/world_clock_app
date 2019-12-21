@@ -1,16 +1,18 @@
 # world_clock_app
 
-A new Flutter application.
+This a flutter application used to manage your time zones of preference. With this app, you can keep up with any time zone you want.
 
-## Getting Started
+## Technologies
+The app is created with:
+* http (https://pub.dev/packages/http)
+* flutter_spinkit (https://pub.dev/packages/flutter_spinkit)
+* flutter_analog_clock (https://pub.dev/packages/flutter_analog_clock)
+* intl (https://pub.dev/packages/intl)
+* floor (https://pub.dev/packages/floor)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Showcase and Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Main Screen](screenshots/home.jpg)
+![Selected Time Zones](screenshots/selected.jpg)
+![List](screenshots/list.jpg)
