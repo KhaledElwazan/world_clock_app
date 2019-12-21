@@ -1,6 +1,6 @@
 # world_clock_app
 
-This a flutter application used to manage your time zones of preference. With this app, you can keep up with any time zone you want.
+This flutter application is used to manage your time zones of preference. With this app, you can keep up with any time zone you want.
 
 ## Technologies
 The app was created using:
