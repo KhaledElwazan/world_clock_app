@@ -11,7 +11,7 @@ class TimeZonesSelector extends StatelessWidget {
           children: List.generate(timezones.length, (int index) {
             return ListTile(
               title: Text(timezones[index]),
-              onTap: () => print(' item # $index clicked'),
+              onTap: () => Navigator.pop(context, index),
             );
           }),
         ),

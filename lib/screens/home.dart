@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   int _currentIndex;
 
   List<String> _allTimeZones = [];
-  List<TimeZone> _selectedTimeZones = [];
+  Set<TimeZone> _selectedTimeZones = {};
   List<Widget> _selectableViews = [];
 
   @override
@@ -23,46 +23,11 @@ class _HomeState extends State<Home> {
     super.initState();
     _currentIndex = 0;
 
-
     //TODO: load favorite time zones from data storage
-    TimeZone tz1 = TimeZone.fromJson({
-      "week_number": 51,
-      "utc_offset": "+00:00",
-      "utc_datetime": "2019-12-20T12:44:40.547737+00:00",
-      "unixtime": 1576845880,
-      "timezone": "Africa/Abidjan",
-      "raw_offset": 0,
-      "dst_until": null,
-      "dst_offset": 0,
-      "dst_from": null,
-      "dst": false,
-      "day_of_year": 354,
-      "day_of_week": 5,
-      "datetime": "2019-12-20T12:44:40.547737+00:00",
-      "client_ip": "197.48.96.78",
-      "abbreviation": "GMT"
-    });
 
-    TimeZone tz2 = TimeZone.fromJson({
-      "week_number": 51,
-      "utc_offset": "+00:00",
-      "utc_datetime": "2019-12-20T12:44:40.547737+00:00",
-      "unixtime": 1576845880,
-      "timezone": "Africa/Abidjan",
-      "raw_offset": 0,
-      "dst_until": null,
-      "dst_offset": 0,
-      "dst_from": null,
-      "dst": false,
-      "day_of_year": 354,
-      "day_of_week": 5,
-      "datetime": "2019-12-20T12:44:40.547737+00:00",
-      "client_ip": "197.48.96.78",
-      "abbreviation": "GMT"
-    });
 
-    _selectedTimeZones.add(tz1);
-    _selectedTimeZones.add(tz2);
+//    _selectedTimeZones.add(tz1);
+//    _selectedTimeZones.add(tz2);
   }
 
   void onTabTapped(int index) {

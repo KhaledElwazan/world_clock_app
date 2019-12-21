@@ -32,6 +32,45 @@ class TimeZone {
       this.clientIp,
       this.abbreviation});
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is TimeZone &&
+              runtimeType == other.runtimeType &&
+              weekNumber == other.weekNumber &&
+              utcOffset == other.utcOffset &&
+              utcDatetime == other.utcDatetime &&
+              unixtime == other.unixtime &&
+              timezone == other.timezone &&
+              rawOffset == other.rawOffset &&
+              dstUntil == other.dstUntil &&
+              dstOffset == other.dstOffset &&
+              dstFrom == other.dstFrom &&
+              dst == other.dst &&
+              dayOfYear == other.dayOfYear &&
+              dayOfWeek == other.dayOfWeek &&
+              datetime == other.datetime &&
+              clientIp == other.clientIp &&
+              abbreviation == other.abbreviation;
+
+  @override
+  int get hashCode =>
+      weekNumber.hashCode ^
+      utcOffset.hashCode ^
+      utcDatetime.hashCode ^
+      unixtime.hashCode ^
+      timezone.hashCode ^
+      rawOffset.hashCode ^
+      dstUntil.hashCode ^
+      dstOffset.hashCode ^
+      dstFrom.hashCode ^
+      dst.hashCode ^
+      dayOfYear.hashCode ^
+      dayOfWeek.hashCode ^
+      datetime.hashCode ^
+      clientIp.hashCode ^
+      abbreviation.hashCode;
+
   TimeZone.fromJson(Map<String, dynamic> json) {
     weekNumber = json['week_number'];
     utcOffset = json['utc_offset'];

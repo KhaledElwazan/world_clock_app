@@ -19,6 +19,8 @@ class _ClockCardState extends State<ClockCard> {
   @override
   Widget build(BuildContext context) {
     date = DateTime.parse(widget.timezone.datetime);
+    date = date.add(
+        Duration(hours: int.parse(widget.timezone.utcOffset.substring(1, 3))));
 
     return Card(
       child: Row(
