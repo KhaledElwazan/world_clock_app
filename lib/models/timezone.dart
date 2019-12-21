@@ -1,13 +1,24 @@
+import 'package:floor/floor.dart';
+
+@entity
 class TimeZone {
+
+  @PrimaryKey(autoGenerate: true)
+  int id;
+
   int weekNumber;
   String utcOffset;
   String utcDatetime;
   int unixtime;
+
+//  @primaryKey
   String timezone;
   int rawOffset;
-  Null dstUntil;
+
+//  Null dstUntil;
   int dstOffset;
-  Null dstFrom;
+
+//  Null dstFrom;
   bool dst;
   int dayOfYear;
   int dayOfWeek;
@@ -15,55 +26,40 @@ class TimeZone {
   String clientIp;
   String abbreviation;
 
-  TimeZone(
-      {this.weekNumber,
-      this.utcOffset,
-      this.utcDatetime,
-      this.unixtime,
-      this.timezone,
-      this.rawOffset,
-      this.dstUntil,
-      this.dstOffset,
-      this.dstFrom,
-      this.dst,
-      this.dayOfYear,
-      this.dayOfWeek,
-      this.datetime,
-      this.clientIp,
-      this.abbreviation});
+  TimeZone({this.id,
+    this.weekNumber,
+    this.utcOffset,
+    this.utcDatetime,
+    this.unixtime,
+    this.timezone,
+    this.rawOffset,
+//      this.dstUntil,
+    this.dstOffset,
+//      this.dstFrom,
+    this.dst,
+    this.dayOfYear,
+    this.dayOfWeek,
+    this.datetime,
+    this.clientIp,
+    this.abbreviation});
+
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
           other is TimeZone &&
-              runtimeType == other.runtimeType &&
-              weekNumber == other.weekNumber &&
-              utcOffset == other.utcOffset &&
-              utcDatetime == other.utcDatetime &&
-              unixtime == other.unixtime &&
-              timezone == other.timezone &&
-              rawOffset == other.rawOffset &&
-              dstUntil == other.dstUntil &&
-              dstOffset == other.dstOffset &&
-              dstFrom == other.dstFrom &&
-              dst == other.dst &&
-              dayOfYear == other.dayOfYear &&
-              dayOfWeek == other.dayOfWeek &&
-              datetime == other.datetime &&
-              clientIp == other.clientIp &&
-              abbreviation == other.abbreviation;
+              timezone == other.timezone;
 
   @override
   int get hashCode =>
+      id.hashCode ^
       weekNumber.hashCode ^
       utcOffset.hashCode ^
       utcDatetime.hashCode ^
       unixtime.hashCode ^
       timezone.hashCode ^
       rawOffset.hashCode ^
-      dstUntil.hashCode ^
       dstOffset.hashCode ^
-      dstFrom.hashCode ^
       dst.hashCode ^
       dayOfYear.hashCode ^
       dayOfWeek.hashCode ^
@@ -78,9 +74,9 @@ class TimeZone {
     unixtime = json['unixtime'];
     timezone = json['timezone'];
     rawOffset = json['raw_offset'];
-    dstUntil = json['dst_until'];
+//    dstUntil = json['dst_until'];
     dstOffset = json['dst_offset'];
-    dstFrom = json['dst_from'];
+//    dstFrom = json['dst_from'];
     dst = json['dst'];
     dayOfYear = json['day_of_year'];
     dayOfWeek = json['day_of_week'];
@@ -89,9 +85,10 @@ class TimeZone {
     abbreviation = json['abbreviation'];
   }
 
+
   @override
   String toString() {
-    return 'TimeZone{weekNumber: $weekNumber, utcOffset: $utcOffset, utcDatetime: $utcDatetime, unixtime: $unixtime, timezone: $timezone, rawOffset: $rawOffset, dstUntil: $dstUntil, dstOffset: $dstOffset, dstFrom: $dstFrom, dst: $dst, dayOfYear: $dayOfYear, dayOfWeek: $dayOfWeek, datetime: $datetime, clientIp: $clientIp, abbreviation: $abbreviation}';
+    return 'TimeZone{id: $id, weekNumber: $weekNumber, utcOffset: $utcOffset, utcDatetime: $utcDatetime, unixtime: $unixtime, timezone: $timezone, rawOffset: $rawOffset, dstOffset: $dstOffset, dst: $dst, dayOfYear: $dayOfYear, dayOfWeek: $dayOfWeek, datetime: $datetime, clientIp: $clientIp, abbreviation: $abbreviation}';
   }
 
   Map<String, dynamic> toJson() {
@@ -102,9 +99,9 @@ class TimeZone {
     data['unixtime'] = this.unixtime;
     data['timezone'] = this.timezone;
     data['raw_offset'] = this.rawOffset;
-    data['dst_until'] = this.dstUntil;
+//    data['dst_until'] = this.dstUntil;
     data['dst_offset'] = this.dstOffset;
-    data['dst_from'] = this.dstFrom;
+//    data['dst_from'] = this.dstFrom;
     data['dst'] = this.dst;
     data['day_of_year'] = this.dayOfYear;
     data['day_of_week'] = this.dayOfWeek;

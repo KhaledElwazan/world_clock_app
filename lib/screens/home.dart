@@ -6,6 +6,9 @@ import 'package:world_clock_app/views/clock_view.dart';
 import 'package:world_clock_app/views/timezone_List_view.dart';
 
 class Home extends StatefulWidget {
+
+  static const routeName = '/home';
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -15,7 +18,7 @@ class _HomeState extends State<Home> {
   int _currentIndex;
 
   List<String> _allTimeZones = [];
-  Set<TimeZone> _selectedTimeZones = {};
+  List<TimeZone> _selectedTimeZones = [];
   List<Widget> _selectableViews = [];
 
   @override
@@ -23,11 +26,6 @@ class _HomeState extends State<Home> {
     super.initState();
     _currentIndex = 0;
 
-    //TODO: load favorite time zones from data storage
-
-
-//    _selectedTimeZones.add(tz1);
-//    _selectedTimeZones.add(tz2);
   }
 
   void onTabTapped(int index) {
@@ -42,6 +40,7 @@ class _HomeState extends State<Home> {
 
     Map arguments = ModalRoute.of(context).settings.arguments;
     _allTimeZones = arguments['timezones'];
+    _selectedTimeZones = arguments['selectedTimeZones'];
 
     _selectableViews.add(ClockView(
       addTimeZone: () {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TimeZonesSelector extends StatelessWidget {
+
+  static const routeName = '/timezone_selector';
+
   @override
   Widget build(BuildContext context) {
     Map arguments = ModalRoute.of(context).settings.arguments;
